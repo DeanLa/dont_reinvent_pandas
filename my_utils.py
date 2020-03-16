@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def make_sliding_time_windows(df, steps_back, col_name='mean_event'):
+def make_sliding_time_windows(df, steps_back, col_name='mean_bears'):
     ret = df.copy()
     for i in range(1, steps_back + 1):
         ret['{}-{}'.format(col_name, i)] = ret[col_name].shift(i)
